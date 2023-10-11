@@ -5,6 +5,8 @@ from src.CalcRating import CalcRating
 from src.TextDataReader import TextDataReader
 from src.YAMLDataReader import YAMLDataReader
 from src.HighScore import HighScore
+
+
 def get_path_from_arguments(args) -> str:
     parser = argparse.ArgumentParser(description="Path to datafile")
     parser.add_argument("-p", dest="path", type=str, required=True,
@@ -17,11 +19,10 @@ def main():
     path = 'data/data.txt'
     reader = TextDataReader()
     students = reader.read(path)
-    #print("Students: ", students)
+    # print("Students: ", students)
     rating = CalcRating(students).calc()
-    #print("Rating: ", rating)
+    # print("Rating: ", rating)
     YAML()
-
 
 
 def YAML():
@@ -33,5 +34,7 @@ def YAML():
     print("Rating: ", rating)
     highScore = HighScore(rating).calc()
     print("Количество отличников: " + str(highScore))
+
+
 if __name__ == "__main__":
     main()

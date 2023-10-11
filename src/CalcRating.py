@@ -19,6 +19,7 @@ class CalcRating:
                 self.rating[key] += float(subject[1])
             self.rating[key] /= len(self.data[key])
         return self.rating
+
     def YAMLcalc(self):
         for name in self.data.keys():
             self.rating[name] = 0.0
