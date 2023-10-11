@@ -14,7 +14,7 @@ def get_path_from_arguments(args) -> str:
 
 
 def main():
-    path = '../data/data.txt'
+    path = 'data/data.txt'
     reader = TextDataReader()
     students = reader.read(path)
     print("Students: ", students)
